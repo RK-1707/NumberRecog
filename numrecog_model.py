@@ -23,8 +23,11 @@ model.fit(training_images, training_labels, epochs=1)
 test_loss, test_acc = model.evaluate(test_images, test_labels)
 
 # predicting images
-img= cv2.imread('download.png', 0)
+img= cv2.imread('/content/download.png', 0)
+#resize image to 28x28 pixels
+img = img.resize((28,28,1))
 img = np.array(img)
+#reshaping to support our model input and normalizing
 img = img.reshape(1,28,28,1)
 img = img/255.0
 
