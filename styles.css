@@ -1,3 +1,33 @@
-*{
+body{
     background: linear-gradient(89deg, #25CEE6 0%, #012373 100%);
+    margin: 0px;
+    padding: 0px;
+}
+.bar{
+    background: black;
+    color: white;
+    width: 100vw;
+    margin: 0px;
+}
+
+.number{
+    height: 60vh;
+    width: 100vw;
+    position: relative;
+}
+
+.numberip{
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    width: 300px;
+    height: 25px;
+}
+
+.btsubmit{
+    position: absolute;
+    top: 50%;
+    left: 52.5%;
+    height: 31px;
+    margin: 0em;
 }
