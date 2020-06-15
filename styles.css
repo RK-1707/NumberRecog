@@ -12,6 +12,7 @@ body{
 }
 
 .pi{
+    margin-left: 5px;
     float: left;
     border: solid;
     background: linear-gradient(89deg, #FF5EDF 0%, #04C8DE 100%);
@@ -28,6 +29,8 @@ body{
 
 .canvas-container{
     text-align: center;
+    margin-right: 100px
+    ;
 }
 
 .canvas{
