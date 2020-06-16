@@ -5,7 +5,7 @@ window.addEventListener('load', () => {
 
     resize(); // Resizes the canvas once the window loads 
     document.addEventListener('mousedown', startPainting);
-    document.addEventListener('mouseup', stopPainting);
+    document.addEventListener('mouseup', stopPainting);     
     document.addEventListener('mousemove', sketch);
     window.addEventListener('resize', resize);
 });
@@ -44,6 +44,25 @@ function startPainting(event) {
 }
 function stopPainting() {
     paint = false;
+    const imageURL= canvas.toDataURL();
+    console.log(imageURL);
+    OnSketchComplete(imageURL);
+    
+    //const x=canvas.toDataURL('image/png');
+    //const x = ctx.getImageData(0,0,560,560).data;
+    //console.log(x);
+}
+
+var OnSketchComplete= (imgURL) => {
+    fetch('http://localhost:3000/img', {
+        method: "post",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify({
+            imgURL: '10 '
+        })
+    })
+        .then((response) => response.json())
+        .then((data) => { console.log(data) })
 }
 
 function sketch(event) {
