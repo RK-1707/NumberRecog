@@ -1,3 +1,6 @@
+// wait for the content of the window element 
+// to load, then performs the operations. 
+// This is considered best practice.
 window.addEventListener('load', () => {
 
     resize(); // Resizes the canvas once the window loads 
@@ -53,7 +56,7 @@ function sketch(event) {
     // to a round shape. 
     ctx.lineCap = 'round';
 
-    ctx.strokeStyle = 'black';
+    ctx.strokeStyle = 'white';
 
     // The cursor to start drawing 
     // moves to this coordinate 
