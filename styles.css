@@ -3,12 +3,16 @@ body{
     margin: 0px;
     padding: 0px;
 }
+@font-face{
+    font-family: headingFont;
+    src: url('./Resources/heading.ttf');
+}
 .bar{
-    background: black;
+    font-family: headingFont;
     color: white;
-    width: 100vw;
     text-align: center;
-    margin: 0px;
+    margin: 8px 0px;
+
 }
 
 .pi{
