@@ -22,18 +22,5 @@ model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=
 model.fit(training_images, training_labels, epochs=1)
 test_loss, test_acc = model.evaluate(test_images, test_labels)
 
-# predicting images
-img= cv2.imread('image_name', 0)
-#resize image to 28x28 pixels
-img_resized = cv2.resize(img, dsize=(28, 28), interpolation=cv2.INTER_CUBIC)
-img_resized = np.array(img_resized)
-img_reshaped = img_resized.reshape(1,28,28,1)
-img_reshaped = img_reshaped/255.0
-
-#predicting the class
-res = model.predict([img_reshaped])[0]
-digit, accuracy= np.argmax(res), max(res)
-print('digit= ' + str(digit), 'and accuracy= ' + str(accuracy))
-
 #Saving the model as mnist.h5
 model.save('mnist.h5')
